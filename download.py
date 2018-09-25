@@ -23,7 +23,7 @@ def main(args):
     def download(item_id, url, i, images_dir=''):
 
         try:
-            r = requests.get(url)
+            r = requests.get(url,timeout=2)
 
             if r.status_code == 200:
 
