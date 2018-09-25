@@ -34,15 +34,17 @@ def main(args):
                         f.write(r.content)
                         f.close()
                 else:
-                    logging.error('%s\t%s\tunknown_type' % (item_id, url))
+                    # logging.error('%s\t%s\tunknown_type' % (item_id, url))
+                    pass
             else:
-                logging.error('%s\t%s\tstatus:%d' % (item_id, url, r.status_code))
+                # logging.error('%s\t%s\tstatus:%d' % (item_id, url, r.status_code))
+                pass
 
         except KeyboardException:
             raise
         except:
             print "Unexpected error:", sys.exc_info()[0]
-            logging.error(sys.exc_info()[0])
+#             logging.error(sys.exc_info()[0])
 
         if i % 200 == 0:
             print i
@@ -70,7 +72,7 @@ if __name__ == '__main__':
     parser.add_argument('--image_dir', dest='images_dir', type=str, default='images', help='image directory')
     parser.add_argument('--failures', dest='fail_file', type=str, default=None, help='failure records')
     parser.add_argument('--start', dest='start', type=int, default=0, help='start offset')
-    parser.add_argument('--threads', dest='threads', type=int, default=10, help='threads')
+    parser.add_argument('--threads', dest='threads', type=int, default=200, help='threads')
 
     args = parser.parse_args()
 
