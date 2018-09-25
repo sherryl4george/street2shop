@@ -72,7 +72,7 @@ if __name__ == '__main__':
     parser.add_argument('--image_dir', dest='images_dir', type=str, default='images', help='image directory')
     parser.add_argument('--failures', dest='fail_file', type=str, default=None, help='failure records')
     parser.add_argument('--start', dest='start', type=int, default=0, help='start offset')
-    parser.add_argument('--threads', dest='threads', type=int, default=200, help='threads')
+    parser.add_argument('--threads', dest='threads', type=int, default=10, help='threads')
 
     args = parser.parse_args()
 
